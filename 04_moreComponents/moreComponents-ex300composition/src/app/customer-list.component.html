@@ -1,0 +1,4 @@
+
+<app-customer *ngFor="let customer of customerList" 
+[customer]="customer" (clicked)="onCustomerClicked($event)"></app-customer>
+

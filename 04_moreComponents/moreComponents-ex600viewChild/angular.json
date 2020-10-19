@@ -3,13 +3,14 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "more-components-ex300composition": {
+    "moreComponents-ex600viewChild": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:class": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
           "skipTests": true
         },
-        "@schematics/angular:component": {
+        "@schematics/angular:class": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
@@ -38,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/more-components-ex300composition",
+            "outputPath": "dist/moreComponents-ex600viewChild",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -87,18 +88,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "more-components-ex300composition:build"
+            "browserTarget": "moreComponents-ex600viewChild:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "more-components-ex300composition:build:production"
+              "browserTarget": "moreComponents-ex600viewChild:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "more-components-ex300composition:build"
+            "browserTarget": "moreComponents-ex600viewChild:build"
           }
         },
         "test": {
@@ -135,18 +136,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "more-components-ex300composition:serve"
+            "devServerTarget": "moreComponents-ex600viewChild:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "more-components-ex300composition:serve:production"
+              "devServerTarget": "moreComponents-ex600viewChild:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "more-components-ex300composition",
+  "defaultProject": "moreComponents-ex600viewChild",
   "cli": {
     "analytics": false
   }
