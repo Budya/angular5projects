@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dependencyInjection-ex600valueProvider": {
+    "widgets-ex100": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -40,7 +40,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dependencyInjection-ex600valueProvider",
+            "outputPath": "dist/widgets-ex100",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -51,7 +51,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"              
             ],
             "scripts": []
           },
@@ -89,18 +90,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dependencyInjection-ex600valueProvider:build"
+            "browserTarget": "widgets-ex100:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dependencyInjection-ex600valueProvider:build:production"
+              "browserTarget": "widgets-ex100:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dependencyInjection-ex600valueProvider:build"
+            "browserTarget": "widgets-ex100:build"
           }
         },
         "test": {
@@ -137,18 +138,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dependencyInjection-ex600valueProvider:serve"
+            "devServerTarget": "widgets-ex100:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dependencyInjection-ex600valueProvider:serve:production"
+              "devServerTarget": "widgets-ex100:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "dependencyInjection-ex600valueProvider",
+  "defaultProject": "widgets-ex100",
   "cli": {
     "analytics": false
   }

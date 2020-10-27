@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dependencyInjection-ex600valueProvider": {
+    "router-ex100simpleRouting": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -40,7 +40,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dependencyInjection-ex600valueProvider",
+            "outputPath": "dist/router-ex100simpleRouting",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -89,18 +89,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dependencyInjection-ex600valueProvider:build"
+            "browserTarget": "router-ex100simpleRouting:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dependencyInjection-ex600valueProvider:build:production"
+              "browserTarget": "router-ex100simpleRouting:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dependencyInjection-ex600valueProvider:build"
+            "browserTarget": "router-ex100simpleRouting:build"
           }
         },
         "test": {
@@ -137,18 +137,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dependencyInjection-ex600valueProvider:serve"
+            "devServerTarget": "router-ex100simpleRouting:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dependencyInjection-ex600valueProvider:serve:production"
+              "devServerTarget": "router-ex100simpleRouting:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "dependencyInjection-ex600valueProvider",
+  "defaultProject": "router-ex100simpleRouting",
   "cli": {
     "analytics": false
   }
