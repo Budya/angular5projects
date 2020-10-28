@@ -3,18 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { EverythingComponent, PepperoniComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '',
+  {
+    pathMatch: 'pepperoni',
+    component: PepperoniComponent
+  },
+  {
+    path: 'everything/:size',
+    component: EverythingComponent
+  },
+  { path: '**',
     redirectTo: '/pepperoni',
     pathMatch: 'full'
-   },
-  // {
-  //   pathMatch: 'pepperoni',
-  //   component: PepperoniComponent
-  // },
-  // {
-  //   path: 'everything/:size',
-  //   component: EverythingComponent
-  // }
+   }
 ];
 
 @NgModule({

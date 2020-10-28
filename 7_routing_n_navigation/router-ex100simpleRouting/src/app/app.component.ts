@@ -41,11 +41,12 @@ export class EverythingComponent{
   selector: 'app-root',
   template: `
     <h1>Pizzas</h1>
-    <a routerLink="['pepperoni']">Pepperoni</a>
-    <a routerLink="['everything','small']">Everything Small</a>
-    <a routerLink="['everything', 'large']">Everything Large</a>
+    <a [routerLink]="['pepperoni']">Pepperoni</a>
+    <a [routerLink]="['everything','small']">Everything Small</a>
+    <a [routerLink]="['everything', 'large']">Everything Large</a>
+    <router-outlet></router-outlet>
   `,
-  styles: []
+  styles: ["a{padding-right: 10px;"]
 })
 export class AppComponent {
   title = 'router-ex100simpleRouting';
