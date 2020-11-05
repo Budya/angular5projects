@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
-import { HeroListComponent } from './hero-list/hero-list.component';
+//import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeroesModule } from './heroes/heroes.module';
 
 
 
@@ -15,12 +16,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     AppComponent,
     CrisisListComponent,
-    HeroListComponent,
+    //HeroListComponent,
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HeroesModule,
     AppRoutingModule    
     ],
   providers: [],
