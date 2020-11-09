@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { switchMap } from 'rxjs/operators'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-hero-detail',
@@ -11,7 +12,7 @@ import { switchMap } from 'rxjs/operators'
 })
 export class HeroDetailComponent implements OnInit {
 
-  @Input() hero: Hero;
+  hero$: Observable<Hero>;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +24,12 @@ export class HeroDetailComponent implements OnInit {
     this.hero$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) => 
       this.service.getHero(params.get('id')))
-    );
+    );    
+  }
+
+  gotoHeroes(hero: Hero){
+    const heroId = hero ? hero.id : null;
+    this.router.navigate(['/heroes', {id: heroId}]);
   }
 
 }
