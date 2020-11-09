@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 //import { HeroListComponent } from './heroes/hero-list/hero-list.component';
@@ -20,6 +20,7 @@ import { HeroesModule } from './heroes/heroes.module';
     PageNotFoundComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HeroesModule,
