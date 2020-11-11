@@ -10,4 +10,9 @@ import { slideInAnimation } from './animations'
 })
 export class AppComponent {
   title = 'router-ex41routerTourOfHeroes';
+
+  getAnimationData(outlet: RouterOutlet){
+    return outlet && outlet.activatedRouteData && 
+    outlet.activatedRouteData.animation;
+  }
 }
