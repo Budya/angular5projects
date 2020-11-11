@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 //import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroesModule } from './heroes/heroes.module';
@@ -15,7 +15,7 @@ import { HeroesModule } from './heroes/heroes.module';
 @NgModule({
   declarations: [
     AppComponent,
-    CrisisListComponent,
+    //CrisisListComponent,
     //HeroListComponent,
     PageNotFoundComponent
   ],
@@ -24,6 +24,7 @@ import { HeroesModule } from './heroes/heroes.module';
     BrowserModule,
     FormsModule,
     HeroesModule,
+    CrisisCenterModule,
     AppRoutingModule    
     ],
   providers: [],
