@@ -9,6 +9,7 @@ import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 //import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroesModule } from './heroes/heroes.module';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 
 
 
@@ -17,7 +18,8 @@ import { HeroesModule } from './heroes/heroes.module';
     AppComponent,
     //CrisisListComponent,
     //HeroListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ComposeMessageComponent
   ],
   imports: [
     BrowserAnimationsModule,
