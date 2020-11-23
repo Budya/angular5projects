@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeroesModule } from './heroes/heroes.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { AdminModule } from './admin/admin.module';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -20,7 +22,8 @@ import { AdminModule } from './admin/admin.module';
     //CrisisListComponent,
     //HeroListComponent,
     PageNotFoundComponent,
-    ComposeMessageComponent
+    ComposeMessageComponent,
+    
   ],
   imports: [
     BrowserAnimationsModule,
@@ -29,6 +32,7 @@ import { AdminModule } from './admin/admin.module';
     HeroesModule,
     CrisisCenterModule,
     AdminModule,
+    AuthModule,   
     AppRoutingModule    
     ],
   providers: [],
