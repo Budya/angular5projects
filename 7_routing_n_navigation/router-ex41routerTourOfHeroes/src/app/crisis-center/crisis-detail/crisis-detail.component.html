@@ -1,5 +1,5 @@
 <div *ngIf="crisis">
-  <h3>"{{ crisis.name }}"</h3>
+  <h3>"{{ editName }}"</h3>
   <div>
     <label>Id: </label>{{ crisis.id }}</div>
   <div>
@@ -8,6 +8,6 @@
   </div>
   <p>
     <button (click)="save()">Save</button>
-    <button (click)="cancel()">cancel</button>
+    <button (click)="cancel()">Cancel</button>
   </p>
 </div>

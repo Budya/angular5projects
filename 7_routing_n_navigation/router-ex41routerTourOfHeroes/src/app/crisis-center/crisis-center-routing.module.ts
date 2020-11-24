@@ -9,7 +9,7 @@ import { CrisisListComponent } from './crisis-list/crisis-list.component';
 
 const crisisCenterRoutes: Routes = [
   {
-    path: '',
+    path: 'crisis-center',
     component: CrisisCenterComponent,
     children: [
       { 
