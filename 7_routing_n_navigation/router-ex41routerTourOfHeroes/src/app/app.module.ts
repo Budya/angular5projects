@@ -23,7 +23,7 @@ import { AuthModule } from './auth/auth.module';
     //HeroListComponent,
     PageNotFoundComponent,
     ComposeMessageComponent,
-    LoginComponent
+    
     
   ],
   imports: [
