@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 import { Crisis } from './crisis';
 import { CRISES } from './mock-crises';
@@ -11,6 +11,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class CrisisService {
+  static nextCrisisId = 100;
+  private crises$: BehaviorSubject<Crisis[]> = 
+    new BehaviorSubject<Crisis[]>(CRISES); 
 
   constructor(private messageService: MessageService) { }
 
