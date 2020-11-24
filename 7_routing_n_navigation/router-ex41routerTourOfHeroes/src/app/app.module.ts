@@ -5,12 +5,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { CrisisCenterModule } from './crisis-center/crisis-center.module';
+//import { CrisisCenterModule } from './crisis-center/crisis-center.module';
 //import { HeroListComponent } from './heroes/hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { AdminModule } from './admin/admin.module';
+//import { AdminModule } from './admin/admin.module';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
 
@@ -31,8 +31,8 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     FormsModule,
     HeroesModule,
-    CrisisCenterModule,
-    AdminModule,
+    //CrisisCenterModule,
+    
     AuthModule,   
     AppRoutingModule    
     ],

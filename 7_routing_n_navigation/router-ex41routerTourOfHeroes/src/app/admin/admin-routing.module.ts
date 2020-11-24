@@ -8,7 +8,8 @@ import { ManageHeroesComponent } from './manage-heroes/manage-heroes.component';
 
 const adminRoutes: Routes = [
   {
-    path: 'admin',
+    //lazy loading
+    path: '',
     component: AdminComponent,
     canActivate: [AuthGuard],
     children: [
