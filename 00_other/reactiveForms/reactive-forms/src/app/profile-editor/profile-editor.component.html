@@ -1,0 +1,47 @@
+<div class="container">
+  <form class="form-group" (ngSubmit)="onSubmit()" [formGroup]="profileForm">
+
+    <label>
+      First Name: <br>
+      <input type="text" formControlName="firstName" class="form-control" required>
+    </label>
+    <label>
+      Last Name: <br>
+      <input type="text" formControlName="lastName" class="form-control">
+    </label>
+    <div class="form-group" formGroupName="address">
+        <h3>Address</h3>
+        <label>
+            Street: <br>
+            <input type="text" class="form-control" formControlName="street">
+        </label>
+
+        <label>
+            City: <br>
+            <input type="text" class="form-control" formControlName="city">
+        </label>
+
+        <label>
+            State: <br>
+            <input type="text" class="form-control" formControlName="state">
+        </label>
+
+        <label>
+            Zip Code: <br>
+            <input type="text" class="form-control" formControlName="zip">
+        </label>
+    </div>
+
+    <p>
+      <button type="submit" [disabled]="!profileForm.valid" class="btn btn-default">Submit</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-default"
+          (click)="updateProfile()">Update Profile</button>
+    </p>
+  </form>
+  <div> <span >{{testData | json}}</span> </div>
+  <div>
+      Form Status: {{profileForm.status}}
+  </div>
+</div>
