@@ -13,6 +13,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
 //import { AdminModule } from './admin/admin.module';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
+import { Router } from '@angular/router';
 
 
 
@@ -39,4 +40,11 @@ import { AuthModule } from './auth/auth.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(router: Router) {
+    const replacer = (key, value) => (typeof value === 'function') ? 
+    value.name : value;
+
+    console.log('Routes: ', JSON.stringify(router.config, replacer, 2))
+  }
+ }
