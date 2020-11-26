@@ -1,0 +1,16 @@
+<div class="container">
+  <label>
+    Name:<br>
+    <input class="form-control" type="text" [formControl]="name">
+  </label>
+  <p>
+      Value: {{name.value}}
+  </p>
+
+    <p>
+      <button class="btn btn-default" 
+              (click)="updateName()">
+    Update Name
+    </button>  
+    </p>
+</div>
