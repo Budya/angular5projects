@@ -13,7 +13,7 @@ export class Post {
     }
 
     get title(): string{
-        return this.title;
+        return this._title;
     }
 
     get body(): string{

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Post } from './post';
-import { map } from 'rxjs/operators'
-import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
  
 @Component({
   selector: 'app-root',
@@ -19,20 +19,29 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'http-ex500httpRespRxMapOperator';
 
-  _posts: Array<Post>;
-
-  tempPosts: Array<Post>;
+  _posts: Post[]=[];
+  
   constructor(private _http: HttpClient){}
 
   ngOnInit(){
-    return this._http.get<Array<Post>>(`http://jsonplaceholder.
-    typicode.com/posts`).pipe(
-      map(resp => {
-          const tempPost = new Post(resp['title'], resp['body']);
-          this.tempPosts.push(tempPost);
+    return this._http.get<Array<Post>>(`http://jsonplaceholder.typicode.com/posts`).pipe(
+      map(response=>{
+        let postArray: Post[] = new Array<Post>();
+        for(let responseItem of response){
+          const post =
+            new Post(responseItem['title'], responseItem['body']);
+          postArray.push(post);
+        }
+        return postArray;
       })
-       
-    ).subscribe()
+    )
+    .subscribe(
+      response => {        
+        this._posts = response;
+      }
+    )
+    
+
   }
 }
 

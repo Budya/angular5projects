@@ -146,6 +146,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "http-ex500httpRespRxMapOperator"
+    }
+  },
+  "defaultProject": "http-ex500httpRespRxMapOperator",
+  "cli": {
+    "analytics": false
+  }
 }
