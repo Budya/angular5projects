@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "http-ex200httpGetParams": {
+    "http-ex400httpPost": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -40,7 +40,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/http-ex200httpGetParams",
+            "outputPath": "dist/http-ex400httpPost",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -89,18 +89,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "http-ex200httpGetParams:build"
+            "browserTarget": "http-ex400httpPost:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "http-ex200httpGetParams:build:production"
+              "browserTarget": "http-ex400httpPost:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "http-ex200httpGetParams:build"
+            "browserTarget": "http-ex400httpPost:build"
           }
         },
         "test": {
@@ -137,18 +137,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "http-ex200httpGetParams:serve"
+            "devServerTarget": "http-ex400httpPost:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "http-ex200httpGetParams:serve:production"
+              "devServerTarget": "http-ex400httpPost:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "http-ex200httpGetParams",
+  "defaultProject": "http-ex400httpPost",
   "cli": {
     "analytics": false
   }

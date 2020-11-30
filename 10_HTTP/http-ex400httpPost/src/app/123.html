@@ -1,0 +1,17 @@
+<div>
+    Title:
+    <br>
+    <input type="text" [(ngModel)] = "_title" size="50">
+    <br>
+    <br>
+    Body:
+    <br>
+    <textarea cols="50" rows="2" [(ngModel)]="_body"></textarea>
+    <br>
+    <button (click)="onAdd()">Add</button>    
+</div>
+<p><b>You Added:</b></p>
+<p *ngIf="_added.length === 0">None</p>
+<p *ngFor="let added of _added">
+    {{added.title}}
+</p>
