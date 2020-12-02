@@ -10,12 +10,27 @@
     <div *ngIf="userForm.get('username').dirty && userForm.get('username').hasError('minlength')">
       Username should be 3 characters min
     </div>
+    <div *ngIf="userForm.get('username').dirty && userForm.get('username').hasError('alreadyUsed')">
+      Username alreadyUsed
+    </div>
   </div>
   <div>
     <label>Password</label>
     <input type="password" formControlName="password">    
     <div *ngIf="userForm.get('password').dirty && userForm.get('password').hasError('required')">
       Password is required
+    </div>
+  </div>
+  <div>
+    <label>Birth Date</label>
+    <input type="date" formControlName="birthdate">
+    <div *ngIf="birthdateCtrl.dirty">
+      <div *ngIf="birthdateCtrl.hasError('required')">
+        Birth date is required
+      </div>
+      <div *ngIf="birthdateCtrl.hasError('tooYoung')">
+        You're too young
+      </div>
     </div>
   </div>
   <button type="submit">Submit</button>
