@@ -1,0 +1,24 @@
+<h2>Sign Up</h2>
+<form (ngSubmit)="register()" 
+ [formGroup]="userForm">
+  <div>
+    <label>Username</label>
+    <input formControlName="username">
+    <div *ngIf="userForm.get('username').dirty && userForm.get('username').hasError('required')">
+      Username is required
+    </div>
+    <div *ngIf="userForm.get('username').dirty && userForm.get('username').hasError('minlength')">
+      Username should be 3 characters min
+    </div>
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" formControlName="password">    
+    <div *ngIf="userForm.get('password').dirty && userForm.get('password').hasError('required')">
+      Password is required
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+  <button type="button" (click)="reset()"
+   [disabled]="userForm.invalid">Reset</button>
+</form>
