@@ -14,11 +14,23 @@
       Username alreadyUsed
     </div>
   </div>
-  <div>
-    <label>Password</label>
-    <input type="password" formControlName="password">    
-    <div *ngIf="userForm.get('password').dirty && userForm.get('password').hasError('required')">
-      Password is required
+  <div formGroupName="passwordForm">
+    <div>
+      <label>Password</label>
+      <input type="password" formControlName="password">    
+      <div *ngIf="passwordForm.get('password').dirty && passwordForm.get('password').hasError('required')">
+        Password is required
+      </div>
+    </div>
+    <div>
+      <label>Confirm</label>     
+      <input type="text" formControlName="confirm">
+      <div *ngIf="confirmCtrl.dirty && confirmCtrl.hasError('required')">
+        Confirm required
+      </div>
+    </div>
+    <div *ngIf="passwordForm.dirty && passwordForm.hasError('matchingError')">
+      Your password does not match
     </div>
   </div>
   <div>
@@ -36,4 +48,5 @@
   <button type="submit">Submit</button>
   <button type="button" (click)="reset()"
    [disabled]="userForm.invalid">Reset</button>
+   <div>{{userForm.value | json}}</div>
 </form>

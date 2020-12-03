@@ -12,20 +12,40 @@ import { UserService } from './user.service';
 export class AppComponent {
   title = 'forms-ex200codeDrivenForm';
   
-  usernameCtrl: FormControl;
-  passwrodCtrl: FormControl;
-  birthdateCtrl: FormControl;
+  passwordForm: FormGroup;
   userForm: FormGroup;
+  usernameCtrl: FormControl;
+  birthdateCtrl: FormControl;
+  passwordCtrl: FormControl;  
+  confirmCtrl: FormControl;
+  
+
+  static passwordMatch(group: FormGroup): {matchingError: true} | null {
+    const password = group.get('password').value;
+    const confirm = group.get('confirm').value;
+    return password === confirm ? null : {matchingError: true};
+  }
 
   constructor(fb: FormBuilder, private userService: UserService){
-    this.usernameCtrl = fb.control('',[Validators.required,Validators.minLength(3)],
-    control => this.isUsernameAvailable(control));
-    this.passwrodCtrl = fb.control('',[Validators.required]);
-    this.birthdateCtrl = fb.control('', [Validators.required, AppComponent.isOldEnough]); 
+    this.usernameCtrl = 
+    fb.control('', [Validators.required, Validators.minLength(3)], 
+                control => this.isUsernameAvailable(control));    
+    
+    this.birthdateCtrl = 
+    fb.control('', [Validators.required, AppComponent.isOldEnough]); 
+
+    this.passwordCtrl = fb.control('', [Validators.required]);
+    this.confirmCtrl = fb.control('', [Validators.required]);       
+
+    this.passwordForm = fb.group(
+      { password: this.passwordCtrl, confirm: this.confirmCtrl },
+      { validators: AppComponent.passwordMatch }
+    );
+
     this.userForm = fb.group({
       username: this.usernameCtrl,
-      password: this.passwrodCtrl,
-      birthdate: this.birthdateCtrl
+      birthdate: this.birthdateCtrl,
+      passwordForm: this.passwordForm
     });
   }
 
@@ -38,7 +58,7 @@ export class AppComponent {
   //Update from component
   reset(){
     this.usernameCtrl.setValue('');
-    this.passwrodCtrl.setValue('');
+    this.passwordCtrl.setValue('');
   }
 
   register(): void{
