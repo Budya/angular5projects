@@ -1,9 +1,10 @@
 <h2>Sign Up</h2>
 <form (ngSubmit)="register()" 
- #userForm="ngForm">
+ #userForm="ngForm" [ngFormOptions]="{updateOn = 'blur'}">
   <div>
     <label>Username</label>
-    <input name="username" [(ngModel)]="user.username" required minlength="3" #username="ngModel">
+    <input name="username" [(ngModel)]="user.username" 
+    required minlength="3" #username="ngModel" [ngModelOptions]="{updateOn: 'blur'}">
   </div>
   <div *ngIf="username.dirty && username.hasError('required')">
     Username is required

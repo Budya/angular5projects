@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { UserService } from './user.service';
 
 @Component({
@@ -18,6 +18,7 @@ export class AppComponent {
   birthdateCtrl: FormControl;
   passwordCtrl: FormControl;  
   confirmCtrl: FormControl;
+  passwordStreingth = 0;
   
 
   static passwordMatch(group: FormGroup): {matchingError: true} | null {
@@ -34,7 +35,7 @@ export class AppComponent {
     this.birthdateCtrl = 
     fb.control('', [Validators.required, AppComponent.isOldEnough]); 
 
-    this.passwordCtrl = fb.control('', [Validators.required]);
+    this.passwordCtrl = fb.control('', {validators: Validators.required, updateOn: 'blur'});
     this.confirmCtrl = fb.control('', [Validators.required]);       
 
     this.passwordForm = fb.group(
@@ -46,7 +47,15 @@ export class AppComponent {
       username: this.usernameCtrl,
       birthdate: this.birthdateCtrl,
       passwordForm: this.passwordForm
-    });
+    },
+    {updateOn: 'blur'});
+
+    this.passwordCtrl.valueChanges
+      .pipe(
+        debounceTime(400),
+        distinctUntilChanged()
+      )
+      .subscribe(newValue => (this.passwordStreingth = newValue.length));
   }
 
   isUsernameAvailable(control: AbstractControl): Observable<{alreadyUsed: true} | null> {

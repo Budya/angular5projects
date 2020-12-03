@@ -48,5 +48,6 @@
   <button type="submit">Submit</button>
   <button type="button" (click)="reset()"
    [disabled]="userForm.invalid">Reset</button>
+   <div>{{passwordStreingth}}</div>
    <div>{{userForm.value | json}}</div>
 </form>
